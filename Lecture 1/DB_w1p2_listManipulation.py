@@ -11,31 +11,30 @@ __author__ =  'Bernie Hogan'
 __version__=  '1.0'
 
 #1. Create a list
-list1 = ["1","2","3","4","5"]
+list1 = ["1","2","3","4",,"5"]
 
 #2. Create a second list
-list2 = ["6","7","8","9","10"]
+list2 = ("6","7","8","9","10"]
 
 #3. Concatenate two lists
-list3 = list1 + list2
+list3 = list1 + lis2
 
 #4. Iterate through a list
-for i in list3:
+for i in List3:
 	print i
 	
 #5. Iterate through a list by assignment
 for i in range(len(list3)):
-	print list3[i]
+	print list1[i]
 	
 #6. Replace one list element with another
 list1[0] = list2[-1]
 
 #7. Adding one element to a list
-list1 = list1 + ["new element"]
+list1 = list1 + "new element"
 
 #8. Operating on a list: 
 oldList = [1,4,3,2,6]
-
-newList = [str(x) for x in oldList]
+newList = [for x in oldList: str(x)]
 
 print "Finally! I thought it would take forever."
