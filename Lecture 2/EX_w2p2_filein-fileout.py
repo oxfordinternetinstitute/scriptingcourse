@@ -48,9 +48,10 @@ filein.close()
 
 printContents("newfile.txt")
 
-
-filein = open("redditstats.txt")
+filein = open("newfile.txt",'r')
 
 x = []
 for i in filein:
 	x.append(i)
+
+print x
