@@ -38,7 +38,9 @@ def getRedditJson(count=0,after="",url = "http://www.reddit.com/.json",prettyPri
 	if count > 0:
 		url += 	"?count=%d&after=%s" % (count,after)
 	
-	redditfile = urllib2.urlopen(url)
+	opener = urllib2.build_opener()
+	opener.addheaders = [('User-agent', 'OII-DSR-2014-BH/1.0')]
+	redditfile = opener.open(url)
 
 	if prettyPrint:
 		return downloadJsonToPretty(url,"reddit-json_%d_%s.json" % (count,after))
@@ -118,10 +120,10 @@ def downloadJsonToPretty(url = "http://www.reddit.com/.json", name="prettyjson.t
 
 # This method calls the other two. 
 # See method above for optional arguments. 
-getIteratedReddits(150)
+# getIteratedReddits(150)
 
 # To Download for a subreddit: 
-# getIteratedReddits(150,subreddit="aww")
+getIteratedReddits(150,subreddit="aww")
 
 # This method will print the main page by default to prettyjson.txt. 
 # downloadJsonToPretty()
